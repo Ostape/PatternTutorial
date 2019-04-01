@@ -1,4 +1,4 @@
-package com.epam.patterns.creational;
+package com.epam.patterns.creational.singleton;
 
 public class SingletonThreadSafeSimple {
 

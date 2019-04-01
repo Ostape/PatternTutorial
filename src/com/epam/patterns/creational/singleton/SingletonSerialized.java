@@ -1,4 +1,4 @@
-package com.epam.patterns.creational;
+package com.epam.patterns.creational.singleton;
 
 import java.io.*;
 
