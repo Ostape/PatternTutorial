@@ -4,7 +4,7 @@ import java.io.*;
 
 public class SingletonSerialized implements Serializable {
 
-    public static final long serialVersionUID = -8610417477740383133L;
+    public static final long serialVersionUID = -1450736345701062175L;
 
     private SingletonSerialized(){
 
@@ -40,8 +40,7 @@ public class SingletonSerialized implements Serializable {
 
 
 
-
-//    protected Object readResolve(){
-//        return getInstance();
-//    }
+    protected Object readResolve(){
+        return getInstance();
+    }
 }
