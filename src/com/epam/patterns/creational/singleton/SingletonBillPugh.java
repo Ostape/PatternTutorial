@@ -6,7 +6,8 @@ public class SingletonBillPugh {
     }
 
     private static class SingletonHolder{
-        private final static SingletonBillPugh INSTANCE = new SingletonBillPugh();
+        private final static SingletonBillPugh
+                INSTANCE = new SingletonBillPugh();
     }
 
     public static SingletonBillPugh getInstance(){

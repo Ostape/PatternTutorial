@@ -14,4 +14,12 @@ public class SingletonThreadSafeSimple {
         }
         return instance;
     }
+
+    public static void showMe(){
+        System.out.println("I am singletonn Thread safe");
+    }
+
+    public static void main(String[] args) {
+        SingletonThreadSafeSimple.showMe();
+    }
 }
