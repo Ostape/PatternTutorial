@@ -1,6 +1,7 @@
 package com.epam.patterns.creational.abstractFactory;
 
-abstract class FirstDish {
+public enum SingletonEnum {
+    SINGLETON_ENUM()
 
-    abstract void eat();
+
 }

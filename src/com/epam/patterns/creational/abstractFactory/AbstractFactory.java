@@ -1,21 +1,37 @@
 package com.epam.patterns.creational.abstractFactory;
 
-public class AbstractFactory {
+public abstract class AbstractFactory {
 
     public static void main(String[] args) {
-        BusinessLunchFactory businessLunchFactory = AbstractFactory.getBusinessLunchFactory(LunchType.Chinese);
+        cookPack(LunchType.Ukrainian);
+    }
 
-        FirstDish firstDish = businessLunchFactory.cookFirstDish();
-        SecondDish secondDish = businessLunchFactory.cookSecondDish();
-        Desert desert = businessLunchFactory.cookDesert();
+    private static void cookPack(LunchType lunchType) {
+        BusinessLunchFactory businessLunchFactory
+                = AbstractFactory
+                .getBusinessLunchFactory(lunchType);
 
-        BusinessLunchPack pack = new BusinessLunchPack(firstDish, secondDish, desert);
+        FirstDish firstDish = businessLunchFactory
+                .cookFirstDish();
+        SecondDish secondDish = businessLunchFactory
+                .cookSecondDish();
+        Desert desert = businessLunchFactory
+                .cookDesert();
 
+        BusinessLunchPack pack = new BusinessLunchPack.PackBuilder
+                (firstDish, secondDish, desert)
+                .setDesert2(desert)
+                .setSecondDish2(secondDish)
+                .setDesert3(desert)
+                .build();
+
+        System.out.println(pack);
     }
 
     static BusinessLunchFactory getBusinessLunchFactory (LunchType lunchType){
         switch (lunchType){
             case Chinese: return new ChineseBusinessLunchFactory();
+            case Ukrainian: return UkrainianBusinessLunchFactory.UKRAINIAN_BUSINESS_LUNCH_FACTORY;
             default: throw new IllegalArgumentException();
         }
 

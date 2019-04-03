@@ -5,4 +5,9 @@ class Miso extends FirstDish{
     public String toString() {
         return "I am MisoSoup";
     }
+
+    @Override
+    void eat() {
+
+    }
 }
